@@ -1,7 +1,7 @@
 <template>
   <div class="login-page">
     <!-- 背景图 -->
-    <img class="login-page-bg" :src="bgImage" alt="登陆背景图" />
+    <img v-if="bgImage" class="login-page-bg" :src="bgImage" alt="登陆背景图" />
     <!-- 登陆表单 -->
     <div class="login-form-box">
       <el-form :model="loginForm" :rules="loginRules" ref="login-form">
