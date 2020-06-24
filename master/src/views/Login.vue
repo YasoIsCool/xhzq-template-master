@@ -56,8 +56,8 @@ export default {
     return {
       bgImage: null,
       loginForm: {
-        account: "", // 账号
-        password: "" // 密码
+        account: "xhzq", // 账号
+        password: "123456" // 密码
       },
       loginRules: {
         account: [{ required: true, message: "请输入账号", trigger: "blur" }],
@@ -89,11 +89,8 @@ export default {
       const _va_login = await loginValidate(name, this);
       // 验证通过调用登陆接口
       if (!_va_login) return;
-      // const _data = {
-      //   account: this.loginForm.account,
-      //   password: this.loginForm.password
-      // };
-      window?.location?.reload?.();
+      const token = "xhzq";
+      this.$store.dispatch("app/setToken", token);
     }
   }
 };

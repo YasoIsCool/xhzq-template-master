@@ -1,15 +1,10 @@
 /*
- * @Descripttion: 文件说明
+ * @Descripttion: 处理登陆身份鉴权
  * @version: 0.0.1
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
  * @LastEditTime: 2020-06-23 10:59:19
- */
-/**
- * @name 处理登陆身份鉴权
- * @author weilan
- * @time 2020.05.20
  */
 
 import store from "../store";

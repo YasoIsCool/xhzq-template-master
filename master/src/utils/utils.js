@@ -1,9 +1,11 @@
-/**
- * auth: weilan
- * time: 2017/01/17
- * des: 公共工具类
+/*
+ * @Descripttion: 公共工具类
+ * @version: 0.0.1
+ * @Author: gaojiapeng
+ * @Date: 2020-06-23 10:21:00
+ * @LastEditors: gaojiapeng
+ * @LastEditTime: 2020-06-24 08:53:25
  */
-
 /**
  * 跨应用路由跳转
  * @param {String} href url地址

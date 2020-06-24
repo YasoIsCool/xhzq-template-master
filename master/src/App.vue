@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-23 10:43:11
+ * @LastEditTime: 2020-06-24 10:33:48
 -->
 <template>
   <div id="root" class="main-container">
@@ -51,7 +51,9 @@ export default {
   },
   computed: {
     hasToken() {
-      return !!this.$store.getters.token;
+      const token = this.$store.getters.token;
+      document.title = token;
+      return !!token;
     }
   }
 };
