@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-23 10:41:53
+ * @LastEditTime: 2020-06-24 11:05:28
  */
 /**
  * @name 统一注册外部插件、样式、服务等
@@ -21,9 +21,3 @@
 render({ loading: true }) */
 import { vueRender } from "./core/render";
 vueRender({}, true);
-
-/**
- * @name 验证登陆身份并启动微应用
- */
-import microAppStart from "./core/auth";
-microAppStart();

@@ -4,10 +4,10 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-23 10:59:19
+ * @LastEditTime: 2020-06-24 11:09:02
  */
 
-import store from "../store";
+import store from "@/store";
 /**
  * @name 导入接口获取子应用注册表接口
  */
@@ -25,17 +25,9 @@ import noAuthApps from "./app-config";
  * @name 请求获取服务端子应用注册表
  */
 const getAppConfigs = () => {
-  getAppConfigsApi().then(({ data }) => {
-    // 验证请求错误
-    if (data.code !== 200) {
-      return;
-    }
+  getAppConfigsApi().then(data => {
     // 验证数据有效性
-    let _res = data.data || [];
-    if (_res.length === 0) {
-      return;
-    }
-
+    let _res = data || [];
     // 处理菜单状态共享
     let _menu = [];
     _res.forEach(i => {
@@ -53,7 +45,7 @@ const getAppConfigs = () => {
  * @name 验证用户身份并注册微应用
  */
 const microAppStart = () => {
-  const token = false;
+  const token = store.getters.token;
   /**
    * @name 已登录状态获取服务端微应用注册表
    */

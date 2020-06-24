@@ -2,7 +2,7 @@
   "name": "xhzq-template-master",
   "author": "gaojapeng",
   "description": "template-master",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "scripts": {
     "cnpm": "node config/install.js cnpm",
     "serve": "node config/start.js",

@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-24 10:33:48
+ * @LastEditTime: 2020-06-24 14:49:25
 -->
 <template>
   <div id="root" class="main-container">
@@ -18,12 +18,12 @@
         <the-nav />
         <!-- 子应用渲染区 -->
         <div class="main-container-view">
-          <el-scrollbar class="wl-scroll">
+          <el-scrollbar class="content-scroll">
             <!-- qiankun2.0  container 模式-->
             <div id="subapp-viewport" class="app-view-box"></div>
             <!-- qiankun1.0  render 模式-->
-            <div v-html="appContent" class="app-view-box"></div>
-            <div v-if="loading" class="subapp-loading"></div>
+            <!-- <div v-html="appContent" class="app-view-box"></div> -->
+            <!-- <div v-if="loading" class="subapp-loading"></div> -->
           </el-scrollbar>
         </div>
       </div>
@@ -39,6 +39,11 @@
 import TheMenu from "@/components/TheMenu.vue";
 import TheNav from "@/components/TheNav.vue";
 
+/**
+ * @name 验证登陆身份并启动微应用
+ */
+import microAppStart from "@/core/auth";
+
 export default {
   name: "rootView",
   components: {
@@ -53,7 +58,11 @@ export default {
     hasToken() {
       const token = this.$store.getters.token;
       document.title = token;
-      return !!token;
+      const flag = !!token;
+      if (flag) {
+        microAppStart();
+      }
+      return flag;
     }
   }
 };
@@ -78,24 +87,26 @@ body {
   flex-flow: column;
   overflow: hidden;
   > .main-container-view {
-    padding: 8px;
     width: 100%;
     height: calc(100% - 60px);
     background: $main-base-color;
     box-sizing: border-box;
-    > .wl-scroll {
+    > .content-scroll {
       width: 100%;
       height: 100%;
       background: #fff;
       border-radius: 4px;
       .el-scrollbar__wrap {
         overflow-x: hidden;
+        .el-scrollbar__view {
+          height: 100%;
+        }
       }
     }
 
     .app-view-box {
       width: 100%;
-      padding: 12px;
+      height: 100%;
       box-sizing: border-box;
     }
   }

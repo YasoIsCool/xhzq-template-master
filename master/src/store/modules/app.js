@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-24 10:37:57
+ * @LastEditTime: 2020-06-24 15:25:42
  */
 export default {
   namespaced: true,
@@ -30,6 +30,9 @@ export default {
     // 设置token
     setToken({ commit }, data) {
       commit("SET_TOKEN", data);
+    },
+    clearToken({ commit }) {
+      commit("SET_TOKEN", "");
     }
   }
 };

@@ -8,7 +8,6 @@
         @click="setMenuCollapseStatus()"
       ></i>
     </div>
-    <div class="pager-msg">广播：{{ subappMsg }}</div>
     <!-- 右侧操作区 -->
     <div class="nav-handle-box">
       <!-- 消息按钮 -->
@@ -31,7 +30,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { Storage } from "wl-core";
 
 export default {
   name: "theNav",
@@ -46,6 +44,17 @@ export default {
       return this.$store.getters.is_collapse;
     },
     ...mapGetters({ subappMsg: "msg" })
+  },
+  watch: {
+    subappMsg: {
+      handler(val) {
+        const h = this.$createElement;
+        this.$notify({
+          title: "标题名称",
+          message: h("i", { style: "color: teal" }, val)
+        });
+      }
+    }
   },
   methods: {
     // 设置左侧菜单折叠状态
@@ -84,7 +93,7 @@ export default {
     },
     // 退出登录
     logOut() {
-      Storage.remove("token");
+      this.$store.dispatch("clearToken");
       location.reload();
     }
   }
@@ -119,11 +128,6 @@ $header-padding: 15px;
 
   .nav-handle-item + .nav-handle-item {
     margin-left: 12px;
-  }
-
-  .pager-msg {
-    font-weight: 600;
-    font-size: 16px;
   }
 }
 </style>

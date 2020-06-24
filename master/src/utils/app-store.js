@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 文件说明
+ * @version: 0.0.1
+ * @Author: gaojiapeng
+ * @Date: 2020-06-23 10:21:00
+ * @LastEditors: gaojiapeng
+ * @LastEditTime: 2020-06-24 15:08:59
+ */
 import store from "@/store";
 /**
  * @name 导入注册并启动微应用函数
@@ -25,7 +33,9 @@ const appStore = initGlobalState => {
    * @des 将监听到的数据存入vuex
    */
   onGlobalStateChange((value, prev) => {
-    console.log("[onGlobalStateChange - master]:", value, prev);
+    // 不监听当前应用
+    if (value.ignore === "master") return;
+    console.log("[主应用 - master]:", value, prev);
     "msg" in value && store.dispatch("appstore/setMsg", value.msg);
     value.token && store.dispatch("app/setToken", value.token);
     value.appsRefresh && window?.location?.reload?.();

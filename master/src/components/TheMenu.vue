@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-24 10:39:16
+ * @LastEditTime: 2020-06-24 14:57:24
 -->
 <template>
   <el-menu
@@ -15,7 +15,7 @@
     :background-color="themeMenu.background"
     :active-text-color="themeMenu.active_text"
   >
-    <div class="the-menu-logo">{{ is_collapse ? "WL2.0" : "微前端项目" }}</div>
+    <div class="the-menu-logo">{{ is_collapse ? "xhzq" : "微前端项目" }}</div>
     <el-submenu v-for="sub of menu" :key="sub.id" :index="sub.id">
       <template slot="title">
         <i class="menu-icon" :class="sub.icon"></i>
@@ -42,8 +42,8 @@ export default {
   data() {
     return {
       theme_menu: {
-        background: "#2A3F54",
-        text: "#fff",
+        background: "#409EFF",
+        text: "#303133",
         active_text: "#ffd04b"
       } // 菜单主
     };

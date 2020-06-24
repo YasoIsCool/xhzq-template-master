@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-24 10:21:36
+ * @LastEditTime: 2020-06-24 11:11:39
  */
 
 const noAuthApps = [
@@ -22,7 +22,7 @@ const noAuthApps = [
           {
             id: "1-1",
             title: "默认Demo1页", // 菜单名
-            url: "/demo" // 静态路由名
+            url: "/demo/demo1" // 静态路由名
           },
           {
             id: "1-2",

@@ -72,21 +72,17 @@ const qianKunStart = list => {
   registerMicroApps(apps, {
     beforeLoad: [
       app => {
-        console.log("[LifeCycle] before load %c%s", "color: green;", app.name);
+        console.log("加载前 %c%s", "color: green;", app.name);
       }
     ],
     beforeMount: [
       app => {
-        console.log("[LifeCycle] before mount %c%s", "color: green;", app.name);
+        console.log("挂载前 %c%s", "color: green;", app.name);
       }
     ],
     afterUnmount: [
       app => {
-        console.log(
-          "[LifeCycle] after unmount %c%s",
-          "color: green;",
-          app.name
-        );
+        console.log("卸载前 %c%s", "color: green;", app.name);
       }
     ]
   });
