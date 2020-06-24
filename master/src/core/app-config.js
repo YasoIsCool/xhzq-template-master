@@ -4,7 +4,7 @@
  * @Author: gaojiapeng
  * @Date: 2020-06-23 10:21:00
  * @LastEditors: gaojiapeng
- * @LastEditTime: 2020-06-23 10:26:33
+ * @LastEditTime: 2020-06-24 08:43:11
  */
 /**
  * @author weilan
@@ -14,21 +14,21 @@
 
 const noAuthApps = [
   {
-    module: "subapp-login",
+    module: "xhzq-template-subapp",
     defaultRegister: true,
-    devEntry: "//localhost:9002",
-    depEntry: "http://localhost:9002/",
-    routerBase: "/login",
+    devEntry: "//localhost:8080",
+    depEntry: "http://localhost:8080/",
+    routerBase: "/demo",
     data: [
       {
         id: "1",
-        title: "login",
+        title: "demo",
         icon: "el-icon-monitor",
         children: [
           {
             id: "1-1",
-            title: "home",
-            url: "/login"
+            title: "demo",
+            url: "/demo"
           }
         ]
       }
